@@ -90,9 +90,7 @@ RESPONSE:
 }
 ```
 
-```json
-// add some image that is Not Suitable For Work
-```
+
 # Challenge
 
 Your challenge is to the test the existing code base and potentially add new features. 
