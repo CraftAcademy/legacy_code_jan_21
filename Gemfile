@@ -14,6 +14,7 @@ gem 'monkeylearn'
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'rspec-rails'
 end
 
 group :development do
