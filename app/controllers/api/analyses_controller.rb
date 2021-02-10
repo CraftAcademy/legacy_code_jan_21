@@ -21,7 +21,6 @@ class Api::AnalysesController < ApplicationController
   end
 
   def analyze_resource
-    binding.pry
     resource = analysis_params[:resource]
     if analysis_category == :image
       @results = image_analysis(resource)
