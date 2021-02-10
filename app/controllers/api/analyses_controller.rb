@@ -7,7 +7,9 @@ class Api::AnalysesController < ApplicationController
     analysis = Analysis.create(analysis_params
                                    .merge!(results: @results,
                                            request_ip: request.remote_ip))
+                                    
     if analysis.persisted?
+      
       render json: analysis, status: 201
     else
       render json: analysis.errors.full_messages, status: 422
@@ -20,7 +22,8 @@ class Api::AnalysesController < ApplicationController
     params.require(:analysis).permit!
   end
 
-  def analyze_resource
+  def analyze_resource  
+    
     resource = analysis_params[:resource]
     if analysis_category == :image
       @results = image_analysis(resource)

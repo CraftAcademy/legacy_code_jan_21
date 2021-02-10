@@ -13,8 +13,9 @@ RSpec.describe 'POST /api/analyses', types: :request do
       expect(response).to have_http_status 201
     end
 
-
-
+    it 'returns a result' do
+      expect(response_json['results']).to be_truthy
+    end 
   end
   
 end
