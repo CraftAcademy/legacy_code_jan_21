@@ -13,7 +13,11 @@ gem 'rest-client'
 gem 'monkeylearn'
 
 group :development, :test do
-  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
+  gem 'coveralls', require: false
 end
 
 group :development do
@@ -21,3 +25,5 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+
