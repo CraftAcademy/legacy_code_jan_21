@@ -11,6 +11,11 @@ As a user
 In order to understand the analysis  
 I need the text-analysis-response to tell me whether my text is clean  or profane - and to what degree.   
 
+it 'checks my text for profanity' do
+      example = response_json['results']['classifications']
+      expect(example).to eq 'profanity'
+    end
+
 As a user  
 In order to get my image profanity-checked  
 I need the app to analyse my image   
