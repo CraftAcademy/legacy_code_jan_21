@@ -36,5 +36,15 @@ RSpec.describe 'POST /api/analyses', types: :request do
       expect(response).to have_http_status 422
     end
 
+    it 'returns an error if resource is empty' do
+      post '/api/analyses', params: {
+        analysis: {
+          category: "text",
+          resource: ""
+        }
+      }
+      expect(response).to have_http_status 422
+    end
+
   end
 end

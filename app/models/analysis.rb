@@ -3,4 +3,5 @@ class Analysis < ApplicationRecord
     in: ['text','image'], 
     message: 'must be text or image' 
   }
+  validates_presence_of :resource
 end
