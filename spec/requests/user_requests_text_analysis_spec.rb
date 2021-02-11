@@ -30,25 +30,42 @@ RSpec.describe 'POST /api/analyses', types: :request do
   end
 
   describe 'unsuccessfully' do
-    it 'returns an error if category is not correct' do
-      post '/api/analyses', params: {
-        analysis: {
-          category: "Lucas",
-          resource: "I just fucking love testing"
+    describe 'if category is not correct' do
+      before do
+        post '/api/analyses', params: {
+          analysis: {
+            category: "Lucas",
+            resource: "I just fucking love testing"
+          }
         }
-      }
-      expect(response).to have_http_status 422
+      end
+
+      it 'returns an error if category is not correct' do
+        expect(response).to have_http_status 422
+      end
+
+      it 'returns an proper error message' do
+        expect(response_json[0]).to eq "Category must be text or image"
+      end
     end
 
-    it 'returns an error if resource is empty' do
-      post '/api/analyses', params: {
+    describe 'in case resource is empty' do
+      before do
+              post '/api/analyses', params: {
         analysis: {
           category: "text",
           resource: ""
         }
       }
-      expect(response).to have_http_status 422
-    end
+      end
 
+      it 'returns an error if resource is empty' do
+        expect(response).to have_http_status 422
+      end
+
+      it 'returns a proper error message' do
+        expect(response_json[0]).to eq "Resource can't be blank"
+      end
+    end
   end
 end
