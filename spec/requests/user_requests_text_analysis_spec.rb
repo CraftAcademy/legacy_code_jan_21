@@ -26,6 +26,15 @@ RSpec.describe 'POST /api/analyses', types: :request do
   end
 
   describe 'unsuccessfully' do
-    
+    it 'returns an error if category is not specified' do
+      post '/api/analyses', params: {
+        analysis: {
+          category: "",
+          resource: "I just fucking love testing"
+        }
+      }
+      expect(response).to have_http_status 422
+    end
+
   end
 end

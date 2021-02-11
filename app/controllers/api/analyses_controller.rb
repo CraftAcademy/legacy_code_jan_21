@@ -46,6 +46,7 @@ class Api::AnalysesController < ApplicationController
   end
 
   def analysis_category
+    if (analysis_params[:category]== "text" && analysis_params[:category]== "image")
     analysis_params[:category].to_sym
   end
 end
