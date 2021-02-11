@@ -9,7 +9,11 @@ I need the app to analyse my text
 
 As a user  
 In order to understand the analysis  
-I need the text-analysis-response to tell me whether my text is clean  or profane - and to what degree.   
+I need the text-analysis-response to tell me whether my text is clean  or profane - and to what degree.
+
+As an app
+In order to function correctly
+It needs to return proper error code on wrongful use
 
 As a user
 In order to have multiple lines of text analyzed

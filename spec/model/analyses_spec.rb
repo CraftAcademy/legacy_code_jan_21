@@ -7,7 +7,8 @@ RSpec.describe Analysis, type: :model do
       in_array(['text','image']).
       with_message('must be text or image') 
     } 
-    it { is_expected.to validate_presence_of :resource}
+    it { is_expected.to validate_presence_of :resource}.
+    
   end
 
 end
