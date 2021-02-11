@@ -18,10 +18,14 @@ RSpec.describe 'POST /api/analyses', types: :request do
       expect(response_json['results']['text']).to eq expected_output
     end 
     
-    it 'returns the correct profanity classifications' do
+    it 'returns the correct profanity tag' do
       response = eval(response_json['results']['classifications'])
       expect(response[0]['tag_name']).to eq 'profanity'
-      expect(response[0]['confidence']).to be > 0.8
+    end
+
+    it 'return an appropriate confidence' do
+      response = eval(response_json['results']['classifications'])
+    expect(response[0]['confidence']).to be > 0.8
     end
   end
 
