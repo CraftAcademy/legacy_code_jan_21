@@ -6,10 +6,8 @@ class Api::AnalysesController < ApplicationController
   def create
     analysis = Analysis.create(analysis_params
                                    .merge!(results: @results,
-                                           request_ip: request.remote_ip))
-                              
+                                           request_ip: request.remote_ip))                     
     if analysis.persisted?
- 
       render json: analysis, status: 201
     else
       render json: analysis.errors.full_messages, status: 422
