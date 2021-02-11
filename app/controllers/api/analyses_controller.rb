@@ -7,7 +7,7 @@ class Api::AnalysesController < ApplicationController
     analysis = Analysis.create(analysis_params
                                    .merge!(results: @results,
                                            request_ip: request.remote_ip))
-                                    
+     binding.pry                               
     if analysis.persisted?
  
       render json: analysis, status: 201
@@ -46,7 +46,6 @@ class Api::AnalysesController < ApplicationController
   end
 
   def analysis_category
-    if (analysis_params[:category]== "text" && analysis_params[:category]== "image")
     analysis_params[:category].to_sym
   end
 end

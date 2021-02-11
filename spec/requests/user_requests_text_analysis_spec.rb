@@ -29,7 +29,7 @@ RSpec.describe 'POST /api/analyses', types: :request do
     it 'returns an error if category is not specified' do
       post '/api/analyses', params: {
         analysis: {
-          category: "",
+          category: "Lucas",
           resource: "I just fucking love testing"
         }
       }
