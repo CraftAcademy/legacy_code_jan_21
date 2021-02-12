@@ -18,7 +18,9 @@ RSpec.describe 'POST /api/analyses', types: :request do
       expect(response_json['resource']).to eq expected_output
     end
 
-    
+    it 'returns the correct explicit value' do
+      expect(response_json['results']['explicit'].to_f).to be > 0.8
+    end
 
   end
 end
