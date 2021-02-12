@@ -28,7 +28,27 @@ I need the app the respond with a tag and a percentage.
 
 As a user  
 In order to have multiple lines of text analyzed  
-The app should be able to process an array of texts  
+I should be able to pass in an array of texts   
+
+As an app  
+In order to return analyses on each text in an array  
+The response should contain an array of each analysis  
+
+**New Functionality**
+
+As a user  
+In order to view the last 5 analyses made on the app  
+I need my GET request to respond with 5 latest analyses  
+
+**UI**
+
+As a normie
+In order to send a request
+I need to pass my request in through HTML
+
+As a normie 
+In order to view the response
+I need the app to render the response in HTML
 
 
 https://github.com/CraftAcademy/legacy_code_jan_21   

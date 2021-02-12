@@ -23,4 +23,4 @@ RSpec.describe 'POST /api/analyses', types: :request do
     end
 
   end
-end
+end 
