@@ -59,6 +59,3 @@ As a normie
 In order to view the response
 I need the app to render the response in HTML
 ```
-
-https://github.com/CraftAcademy/legacy_code_jan_21   
-https://safe-for-work-api.herokuapp.com/
