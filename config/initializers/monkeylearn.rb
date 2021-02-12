@@ -1,3 +1,3 @@
 Monkeylearn.configure do |c|
-  c.token = Rails.application.credentials[:monkeylearn_key]
+  c.token= Rails.application.credentials[:monkeylearn_key]
 end
