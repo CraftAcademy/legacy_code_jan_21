@@ -3,8 +3,8 @@ RSpec.describe 'POST /api/analyses', types: :request do
     before do
       post '/api/analyses', params: {
         analysis: {
-          category: "text",
-          resource: "I just fucking love testing"
+          category: 'text',
+          resource: 'I just fucking love testing'
         }
       }
     end
@@ -16,8 +16,8 @@ RSpec.describe 'POST /api/analyses', types: :request do
     it 'returns a results hash with our initial resource' do
       expected_output = 'I just fucking love testing'
       expect(response_json['results']['text']).to eq expected_output
-    end 
-    
+    end
+
     it 'returns the correct profanity tag' do
       response = eval(response_json['results']['classifications'])
       expect(response[0]['tag_name']).to eq 'profanity'
@@ -25,7 +25,7 @@ RSpec.describe 'POST /api/analyses', types: :request do
 
     it 'return an appropriate confidence' do
       response = eval(response_json['results']['classifications'])
-    expect(response[0]['confidence']).to be > 0.8
+      expect(response[0]['confidence']).to be > 0.8
     end
   end
 
@@ -34,8 +34,8 @@ RSpec.describe 'POST /api/analyses', types: :request do
       before do
         post '/api/analyses', params: {
           analysis: {
-            category: "Lucas",
-            resource: "I just fucking love testing"
+            category: 'Lucas',
+            resource: 'I just fucking love testing'
           }
         }
       end
@@ -45,18 +45,18 @@ RSpec.describe 'POST /api/analyses', types: :request do
       end
 
       it 'returns an proper error message' do
-        expect(response_json[0]).to eq "Category must be text or image"
+        expect(response_json[0]).to eq 'Category must be text or image'
       end
     end
 
     describe 'in case resource is empty' do
       before do
-              post '/api/analyses', params: {
-        analysis: {
-          category: "text",
-          resource: ""
+        post '/api/analyses', params: {
+          analysis: {
+            category: 'text',
+            resource: ''
+          }
         }
-      }
       end
 
       it 'returns an error if resource is empty' do
